@@ -1,19 +1,14 @@
- #Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 
-from random import randint
+# Вычислить число c заданной точностью d
+# Пример:
+# - при $d = 0.001, π = 3.141.$    $10^{-1} ≤ d ≤10^{-10}$
 
-def mult_prime (x):
-    mult = []
-    i = 1
-    while x >= i:
-        if x%i == 0:
-            mult.append (i)
-            x = x/i
-        i += 1   
-    return mult
-        
 
-n=randint (1, 100 )
-print (f'Заданное число N: {n}')
-mult_prime_list = mult_prime (n)
-print (f'Список простых множителей числа N: {mult_prime_list}')
+import math
+
+n = str (math.pi)
+d = input ('Задайте необходимую точность от 0.1 до 0.0000000001 ---')
+print (n)
+r = n.find ('.')
+print (f'Число Пи с заданной точностью = {n[:(r+len(d)-1)]}')
+
